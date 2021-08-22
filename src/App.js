@@ -1,17 +1,19 @@
 import React, {Component, Suspense} from 'react';
 import './App.css';
 import Layout from './containers/layout/Layout';
-import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
+import {Route, Switch, Redirect} from 'react-router-dom';
+import {ConnectedRouter} from 'connected-react-router';
 import routes from './router/routes';
 import {Container} from 'reactstrap';
 import {Provider} from 'react-redux';
 import store from './redux/store'
+import history from './redux/store'
 
 class App extends Component {
     render() {
         return (
             <Provider store={store}>
-                <BrowserRouter>
+                <ConnectedRouter history={history}>
                     <Layout>
                         <Container fluid>
                             <Suspense fallback={() => (
@@ -33,7 +35,7 @@ class App extends Component {
                             </Suspense>
                         </Container>
                     </Layout>
-                </BrowserRouter>
+                </ConnectedRouter>
             </Provider>
         );
     }
