@@ -2,14 +2,11 @@ import React from 'react';
 import {CardHeader, Card, CardBody, Col, Row, Table, Button, Input} from 'reactstrap';
 
 class Create extends React.Component {
-    state = {}
-    //props={name: string, Create: ()=>{}, elements: [{}, {}] used in componentDid}
-    handleChange = (k) => (e) => {
-        const key = k.toLowerCase()
-        this.setState({[key]: e.target.value})
-    }
+
+    //props={name: string, Create: ()=>{}, fields: {}}
+
     render() {
-        const {...StateData} = this.state
+        const fields = this.props.fields
         return (
             <div className="animated fadeIn">
                 <Row>
@@ -21,7 +18,7 @@ class Create extends React.Component {
                             <CardBody>
                                 <Table responsive striped hover>
                                     <tbody>
-                                    {Object.keys(StateData).map(
+                                    {Object.keys(fields).map(
                                         (k) => (
                                             <tr key={k}>
                                                 <td>{`${k}:`}</td>
@@ -29,8 +26,8 @@ class Create extends React.Component {
                                                     <Input
                                                         type="text"
                                                         name={k}
-                                                        value={StateData[k]}
-                                                        onChange={this.handleChange(k)}
+                                                        value={fields[k]}
+                                                        onChange={this.props.handle(k)}
                                                     />
                                                 </td>
                                             </tr>
@@ -38,7 +35,7 @@ class Create extends React.Component {
                                     )}
                                     </tbody>
                                 </Table>
-                                    <Button color="success" onClick={this.props.Create}>
+                                    <Button color="success" onClick={this.props.create}>
                                         Create
                                     </Button>
                             </CardBody>

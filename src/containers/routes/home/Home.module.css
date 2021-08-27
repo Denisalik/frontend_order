@@ -1,0 +1,7 @@
+.Home {
+    height: 200px;
+    width: 400px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}

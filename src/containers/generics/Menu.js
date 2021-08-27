@@ -3,12 +3,11 @@ import {CardHeader, Card, CardBody, Col, Row, Table, Button} from 'reactstrap';
 
 class Menu extends React.Component {
     state = {}
-    //props={name: string, createNewElement: ()=>{}, elements: [{}, {}], fields: []}
-    async componentDidMount() {
-        //todo
-    }
+    //props={name: string, createNewElement: ()=>{}, elements: [{}, {}]}
 
     render(){
+        const button = this.props.createNewElement ?
+            (<Button color="primary" onClick={this.props.createNewElement}></Button>) : null;
         return (
             <div className="animated fadeIn">
                 <Row>
@@ -19,7 +18,7 @@ class Menu extends React.Component {
                                 <Table responsive striped hover>
                                     <tbody>
                                     <tr>
-                                        {this.props.fields.map((el,ind)=>{
+                                        {Object.values(this.props.elements[0]).map((el,ind)=>{
                                             return (<td key={ind}><strong>{el}</strong></td>)
                                         })}
                                     </tr>
@@ -32,7 +31,7 @@ class Menu extends React.Component {
                                     })}
                                     </tbody>
                                 </Table>
-                                <Button color="primary" onClick={this.props.createNewElement}></Button>
+                                {button}
                             </CardBody>
                         </Card>
                     </Col>
