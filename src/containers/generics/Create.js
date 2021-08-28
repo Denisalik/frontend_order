@@ -20,7 +20,7 @@ class Create extends React.Component {
                     <Col lg={6}>
                         <Card>
                             <CardHeader>
-                                Create new {this.props.name}
+                                Создать новый {this.props.name}
                             </CardHeader>
                             <CardBody>
                                 <Table responsive striped hover>

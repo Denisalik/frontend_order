@@ -11,7 +11,7 @@ class Orders extends React.Component {
     }
 
     render() {
-        return (<Menu name="Orders" elements={this.props.orders} createNewElement={()=> {this.props.history.push("/orders/create")}}></Menu>)
+        return (<Menu name="Заказов" elements={this.props.orders} createNewElement={()=> {this.props.history.push("/orders/create")}}></Menu>)
     }
 }
 

@@ -26,7 +26,7 @@ class CreateOrders extends React.Component {
         this.props.history.push("/orders");
     }
     render() {
-        return (<Create name="Order" create={this.create} fields={this.state} handle={(k) => this.handleChange(k)} handleCheck={(k) => this.handleCheck(k)}></Create>)
+        return (<Create name="заказ" create={this.create} fields={this.state} handle={(k) => this.handleChange(k)} handleCheck={(k) => this.handleCheck(k)}></Create>)
     }
 }
 

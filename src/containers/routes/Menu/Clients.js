@@ -10,7 +10,7 @@ class Clients extends React.Component {
         await actionCreator.fetchClients()(dispatch);
     }
     render() {
-        return (<Menu name="Clients" elements={this.props.clients}></Menu>)
+        return (<Menu name="Клиентов" elements={this.props.clients}></Menu>)
     }
 }
 

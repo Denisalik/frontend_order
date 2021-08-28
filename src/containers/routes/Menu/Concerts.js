@@ -11,7 +11,7 @@ class Concerts extends React.Component {
     }
 
     render() {
-        return (<Menu name="Concerts" elements={this.props.concerts}></Menu>)
+        return (<Menu name="Концертов" elements={this.props.concerts}></Menu>)
     }
 }
 

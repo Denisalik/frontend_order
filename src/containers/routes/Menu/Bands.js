@@ -10,7 +10,7 @@ class Bands extends React.Component {
         await actionCreator.fetchBands()(dispatch);
     }
     render() {
-        return (<Menu name="Bands" elements={this.props.bands}></Menu>)
+        return (<Menu name="Музыкальных груп" elements={this.props.bands}></Menu>)
     }
 }
 
