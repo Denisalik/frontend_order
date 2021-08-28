@@ -25,7 +25,7 @@ class Menu extends React.Component {
                                     {this.props.elements.map((el,ind)=>{
                                         return (
                                             <tr key={ind}>
-                                                {Object.values(el).map((value, ind) => (<td key={ind}>{value}</td>))}
+                                                {Object.values(el).map((value, ind) => (<td key={ind}>{typeof value === "boolean" ? value.toString() : value}</td>))}
                                             </tr>
                                         )
                                     })}
