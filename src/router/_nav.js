@@ -1,5 +1,9 @@
 const items = [
     {
+        name: 'Главная',
+        url: '/'
+    },
+    {
         name: 'Музыкальные группы',
         url: '/bands'
     },
@@ -14,10 +18,6 @@ const items = [
     {
         name: 'Заказы',
         url: '/orders'
-    },
-    {
-        name: 'Главная',
-        url: '/'
     }
 ]
 export default items;

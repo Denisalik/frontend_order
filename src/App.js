@@ -9,21 +9,24 @@ import {store} from './redux/store'
 
 class App extends Component {
     render() {
+        const redirect = <Redirect to="/"></Redirect>
         return (
             <Provider store={store}>
                 <BrowserRouter>
                     <Layout>
-                        <Container fluid>
-
+                        <Container fluid className={"App"}>
                                 <Switch>
                                     {routes.map((el, ind) => {
                                         return (<Route
-                                            {...el}
+                                            path={el.path}
+                                            exact={el.exact}
+                                            component={el.component}
                                             key={ind}
                                         >
                                         </Route>)
                                     })}
-                                    <Redirect to="/"></Redirect>
+                                    {redirect}
+
                                 </Switch>
                         </Container>
                     </Layout>

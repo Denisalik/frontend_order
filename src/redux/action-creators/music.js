@@ -1,5 +1,5 @@
 import {actionMethods} from "../actions/music";
-import {getOrders, getBands, getClients, getConcerts, postBand} from "../axios/axios";
+import {getOrders, getBands, getClients, getConcerts, postOrder} from "../axios/axios";
 
 export const actionCreator = {
     fetchOrders: () => (dispatch) => {
@@ -27,7 +27,7 @@ export const actionCreator = {
         })
     },
     postOrder: (concert_id, client_id, payload) => (dispatch) => {
-        return postBand(concert_id, client_id, payload).then(response => {
+        return postOrder(concert_id, client_id, payload).then(response => {
             dispatch(actionMethods.postOrder(response))
             return response;
         })

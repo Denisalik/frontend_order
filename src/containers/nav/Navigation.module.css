@@ -1,0 +1,22 @@
+.Navigation {
+    background: greenyellow;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.Link {
+    background: #adff2f;
+    border: 5px solid #9adb1b;
+    border-radius: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    width: 150px;
+    margin: 25px;
+    height: 70px;
+}

@@ -14,7 +14,8 @@ class Bands extends React.Component {
     }
 }
 
-export default withRouter(connect(state => ({
-        bands: state.music.get("bands")
+export default withRouter(connect(state =>
+    ({
+        bands: state.music.bands
     })
 )(Bands));

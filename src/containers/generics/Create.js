@@ -7,6 +7,13 @@ class Create extends React.Component {
 
     render() {
         const fields = this.props.fields
+        const checkbox = (name, value, handleCheck)=> (<Input type={"checkbox"} name={name} value={value} onChange={handleCheck}></Input>)
+        const text = (name, value, handle) => (<Input
+            type="text"
+            name={name}
+            value={value}
+            onChange={handle}
+        />)
         return (
             <div className="animated fadeIn">
                 <Row>
@@ -23,12 +30,9 @@ class Create extends React.Component {
                                             <tr key={k}>
                                                 <td>{`${k}:`}</td>
                                                 <td>
-                                                    <Input
-                                                        type="text"
-                                                        name={k}
-                                                        value={fields[k]}
-                                                        onChange={this.props.handle(k)}
-                                                    />
+                                                    {typeof fields[k] === "boolean" ?
+                                                        checkbox(k, fields[k], this.props.handleCheck(k)) :
+                                                        text(k, fields[k], this.props.handle(k))}
                                                 </td>
                                             </tr>
                                         ),

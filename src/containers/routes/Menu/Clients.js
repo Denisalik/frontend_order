@@ -15,6 +15,6 @@ class Clients extends React.Component {
 }
 
 export default withRouter(connect(state => ({
-        clients: state.music.get("clients")
+        clients: state.music.clients
     })
 )(Clients));

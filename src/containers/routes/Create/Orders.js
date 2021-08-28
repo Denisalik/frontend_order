@@ -14,15 +14,19 @@ class CreateOrders extends React.Component {
     handleChange = (k) => (e) => {
         this.setState({[k]: e.target.value})
     }
+    handleCheck = (k) => (e) => {
+        this.setState({[k]: e.target.checked})
+    }
 
     create = async () => {
         const dispatch = this.props.dispatch;
         const {concert_id, client_id, ...payload} = this.state;
-        await actionCreator.postOrder(concert_id, client_id, payload)(dispatch)
+        await actionCreator.postOrder(concert_id, client_id, payload)(dispatch);
+        await actionCreator.fetchOrders()(dispatch);
         this.props.history.push("/orders");
     }
     render() {
-        return (<Create name="Order" create={this.create} fields={this.state} handle={() => (k) => this.handleChange(k)}></Create>)
+        return (<Create name="Order" create={this.create} fields={this.state} handle={(k) => this.handleChange(k)} handleCheck={(k) => this.handleCheck(k)}></Create>)
     }
 }
 

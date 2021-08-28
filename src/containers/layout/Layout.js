@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import Navigation from "../nav/Navigation";
-import items from '../../router/_nav'
+import items from "../../router/_nav";
 
 class Layout extends React.Component{
     render(){

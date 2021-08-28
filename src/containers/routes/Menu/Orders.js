@@ -16,6 +16,6 @@ class Orders extends React.Component {
 }
 
 export default withRouter(connect(state => ({
-        orders: state.music.get("orders")
+        orders: state.music.orders
     })
 )(Orders));

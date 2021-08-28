@@ -16,6 +16,6 @@ class Concerts extends React.Component {
 }
 
 export default withRouter(connect(state => ({
-        concerts: state.music.get("concerts")
+        concerts: state.music.concerts
     })
 )(Concerts));

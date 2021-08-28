@@ -12,5 +12,3 @@ export const store = createStore(createRootReducer(history),
     {},
     applyMiddleware(...middleware)
 );
-
-//export default {store, history};
